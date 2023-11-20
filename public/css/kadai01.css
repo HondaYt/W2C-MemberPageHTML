@@ -74,7 +74,6 @@ ul {
   display: none;
   overflow: hidden;
   transition: 0.5s;
-  transform: translateX(100%); /* 初期状態を左に設定 */
 }
 .contentWrap .content img {
   width: 50%;
@@ -93,18 +92,18 @@ ul {
 @keyframes contentOut {
   0% {
     display: flex;
-    transform: translateX(0); /* 開始時点を中央に設定 */
+    opacity: 1; /* 開始時点を中央に設定 */
   }
   100% {
     display: none;
-    transform: translateX(-100%); /* 終了時点を左に設定 */
+    opacity: 0; /* 終了時点を左に設定 */
   }
 }
 @keyframes contentIn {
   0% {
-    transform: translateX(100%); /* 開始時点を左に設定 */
+    opacity: 0; /* 開始時点を左に設定 */
   }
   100% {
-    transform: translateX(0); /* 終了時点を中央に設定 */
+    opacity: 1; /* 終了時点を中央に設定 */
   }
 }

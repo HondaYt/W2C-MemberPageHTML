@@ -4,7 +4,7 @@ contents[0].classList.add("active");
 btns[0].classList.add("active");
 
 btns.forEach((btn, i) => {
-    btn.addEventListener("click", (e) => {
+    btn.addEventListener("click", () => {
         btns.forEach((btn, j) => {
             if (i !== j) {
                 contents[j].classList.add("hidden");
