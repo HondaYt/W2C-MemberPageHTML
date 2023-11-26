@@ -1,4 +1,3 @@
-@charset "UTF-8";
 :root {
   --color-primary: #d61717;
   --text-color: #333333;
@@ -8,6 +7,7 @@
 html {
   font-size: 62.5%;
   font-family: "Inter", "Noto Sans JP", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-weight: 400;
   font-feature-settings: "palt";
   font-kerning: normal;
   color: var(--text-color);
@@ -17,9 +17,14 @@ a {
   color: var(--text-color);
   text-decoration: none;
   transition: opacity 0.3s ease;
+  font-weight: 400;
 }
 a:hover {
   opacity: 0.7;
+}
+
+li {
+  list-style: none;
 }
 
 #mainVisual {
@@ -57,7 +62,6 @@ a:hover {
   display: flex;
 }
 #mainVisual nav ul li {
-  list-style: none;
   margin-left: 4rem;
 }
 #mainVisual nav ul li a {
@@ -116,25 +120,25 @@ a:hover {
 }
 
 .sectionTitle h2 {
-  padding-top: 10rem;
-  padding-left: 5rem;
-  font-size: 6rem;
   position: relative;
+  color: var(--text-color);
+  font-size: 6rem;
+  margin-top: 10rem;
+  margin-bottom: 3rem;
+  padding-left: 5rem;
 }
 .sectionTitle h2 span {
-  text-shadow: none;
-  position: absolute;
   bottom: -3rem;
-  left: 3rem;
-  color: rgba(var(--text-color-rgb), 0.1);
+  left: 4rem;
+  position: absolute;
+  opacity: 0.05;
   font-size: 16rem;
 }
 
 #contents ul {
   display: flex;
-  list-style: none;
 }
-#contents .btn {
+#contents ul .btn {
   cursor: pointer;
   margin: 16px;
   display: block;
@@ -143,11 +147,38 @@ a:hover {
   position: relative;
   transition: 0.5s;
 }
-#contents .btn.active a {
-  font-weight: bold;
+#contents ul .btn a {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  align-items: center;
+  font-size: 2rem;
+  transition: 0.5s;
+}
+#contents ul .btn a span {
+  display: block;
+  opacity: 0.2;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  font-size: 1.5rem;
+  transition: 0.5s;
+}
+#contents ul .btn:hover::after {
+  transform-origin: left top;
+  transform: scale(1, 1);
+}
+#contents ul .btn:hover a {
   transform: translateY(-8px);
 }
-#contents .btn.active::after {
+#contents ul .btn.active a {
+  font-weight: 700;
+  transform: translateY(-8px);
+}
+#contents ul .btn.active::after {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -157,7 +188,7 @@ a:hover {
   transform: scale(1, 1);
   background: tomato;
 }
-#contents .btn::after {
+#contents ul .btn::after {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -168,22 +199,6 @@ a:hover {
   transform: scale(0, 1);
   transition: transform 0.5s;
   transform-origin: right top;
-}
-#contents .btn a {
-  display: block;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  transition: 0.5s;
-}
-#contents .btn:hover::after {
-  transform-origin: left top;
-  transform: scale(1, 1);
-}
-#contents .btn:hover a {
-  transform: translateY(-8px);
 }
 #contents .contentWrap {
   width: 100%;
@@ -207,27 +222,27 @@ a:hover {
   width: 50%;
 }
 #contents .contentWrap .content.active {
-  animation: contentIn 1s ease forwards; /* fill-modeをforwardsに変更 */
+  animation: contentIn 1s ease forwards;
   display: flex;
 }
 #contents .contentWrap .content.hidden {
-  animation: contentOut 1s ease forwards; /* fill-modeをforwardsに変更 */
+  animation: contentOut 1s ease forwards;
 }
 @keyframes contentOut {
   0% {
     display: flex;
-    opacity: 1; /* 開始時点を中央に設定 */
+    opacity: 1;
   }
   100% {
     display: none;
-    opacity: 0; /* 終了時点を左に設定 */
+    opacity: 0;
   }
 }
 @keyframes contentIn {
   0% {
-    opacity: 0; /* 開始時点を左に設定 */
+    opacity: 0;
   }
   100% {
-    opacity: 1; /* 終了時点を中央に設定 */
+    opacity: 1;
   }
 }
