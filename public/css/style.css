@@ -1,0 +1,233 @@
+@charset "UTF-8";
+:root {
+  --color-primary: #d61717;
+  --text-color: #333333;
+  --text-color-rgb: 51, 51, 51;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Inter", "Noto Sans JP", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-feature-settings: "palt";
+  font-kerning: normal;
+  color: var(--text-color);
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+a:hover {
+  opacity: 0.7;
+}
+
+#mainVisual {
+  width: 100%;
+  height: 100vh;
+  background: url(../images/mainVisual.jpg) no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+#mainVisual h2 {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: #fff;
+  text-align: center;
+}
+#mainVisual nav {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, #fff 100%);
+}
+#mainVisual nav h1 {
+  font-size: 4rem;
+}
+#mainVisual nav ul {
+  display: flex;
+}
+#mainVisual nav ul li {
+  list-style: none;
+  margin-left: 4rem;
+}
+#mainVisual nav ul li a {
+  display: flex;
+  align-items: flex-end;
+  flex-flow: column;
+  font-size: 2rem;
+}
+#mainVisual nav ul li a span {
+  display: block;
+  font-size: 1.5rem;
+}
+
+#introduction {
+  width: 100%;
+  height: 70vh;
+  display: flex;
+}
+#introduction .introductionText {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-direction: column;
+  padding-left: 4%;
+}
+#introduction .introductionText h2 {
+  font-size: 6.4rem;
+  font-weight: 800;
+}
+#introduction .introductionText h2 span {
+  font-weight: 600;
+  font-size: 9.6rem;
+  color: #d61717;
+}
+#introduction .introductionText h2 span:first-child {
+  letter-spacing: -1rem;
+}
+#introduction .introductionText p {
+  width: 80%;
+  font-size: 2rem;
+}
+#introduction .introductionText p span {
+  font-size: 3rem;
+}
+#introduction picture {
+  width: 50%;
+  height: 100%;
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+}
+#introduction picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sectionTitle h2 {
+  padding-top: 10rem;
+  padding-left: 5rem;
+  font-size: 6rem;
+  position: relative;
+}
+.sectionTitle h2 span {
+  text-shadow: none;
+  position: absolute;
+  bottom: -3rem;
+  left: 3rem;
+  color: rgba(var(--text-color-rgb), 0.1);
+  font-size: 16rem;
+}
+
+#contents ul {
+  display: flex;
+  list-style: none;
+}
+#contents .btn {
+  cursor: pointer;
+  margin: 16px;
+  display: block;
+  width: 250px;
+  height: 50px;
+  position: relative;
+  transition: 0.5s;
+}
+#contents .btn.active a {
+  font-weight: bold;
+  transform: translateY(-8px);
+}
+#contents .btn.active::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 1px;
+  transform: scale(1, 1);
+  background: tomato;
+}
+#contents .btn::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: tomato;
+  transform: scale(0, 1);
+  transition: transform 0.5s;
+  transform-origin: right top;
+}
+#contents .btn a {
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+}
+#contents .btn:hover::after {
+  transform-origin: left top;
+  transform: scale(1, 1);
+}
+#contents .btn:hover a {
+  transform: translateY(-8px);
+}
+#contents .contentWrap {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+#contents .contentWrap .content {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  gap: 32px;
+  display: none;
+  overflow: hidden;
+  transition: 0.5s;
+}
+#contents .contentWrap .content img {
+  width: 50%;
+}
+#contents .contentWrap .content .text {
+  width: 50%;
+}
+#contents .contentWrap .content.active {
+  animation: contentIn 1s ease forwards; /* fill-modeをforwardsに変更 */
+  display: flex;
+}
+#contents .contentWrap .content.hidden {
+  animation: contentOut 1s ease forwards; /* fill-modeをforwardsに変更 */
+}
+@keyframes contentOut {
+  0% {
+    display: flex;
+    opacity: 1; /* 開始時点を中央に設定 */
+  }
+  100% {
+    display: none;
+    opacity: 0; /* 終了時点を左に設定 */
+  }
+}
+@keyframes contentIn {
+  0% {
+    opacity: 0; /* 開始時点を左に設定 */
+  }
+  100% {
+    opacity: 1; /* 終了時点を中央に設定 */
+  }
+}
