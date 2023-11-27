@@ -1,7 +1,10 @@
 :root {
-  --color-primary: #d61717;
+  --color-primary: hsl(0, 65%, 50%);
   --text-color: #333333;
   --text-color-rgb: 51, 51, 51;
+  --color-engineer: #17a8d6;
+  --color-designer: #d67e17;
+  --color-director: #59c107;
 }
 
 html {
@@ -9,8 +12,10 @@ html {
   font-family: "Inter", "Noto Sans JP", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-weight: 400;
   font-feature-settings: "palt";
-  font-kerning: normal;
+  font-kerning: 300;
   color: var(--text-color);
+  scroll-behavior: smooth;
+  transition-timing-function: ease-in-out;
 }
 
 a {
@@ -18,9 +23,6 @@ a {
   text-decoration: none;
   transition: opacity 0.3s ease;
   font-weight: 400;
-}
-a:hover {
-  opacity: 0.7;
 }
 
 li {
@@ -56,7 +58,16 @@ li {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, #fff 100%);
 }
 #mainVisual nav h1 {
-  font-size: 4rem;
+  height: 100%;
+  display: flex;
+  padding: 2rem 0;
+  align-items: center;
+  justify-content: center;
+}
+#mainVisual nav h1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 #mainVisual nav ul {
   display: flex;
@@ -65,14 +76,26 @@ li {
   margin-left: 4rem;
 }
 #mainVisual nav ul li a {
+  position: relative;
   display: flex;
   align-items: flex-end;
   flex-flow: column;
   font-size: 2rem;
+  font-weight: 600;
 }
 #mainVisual nav ul li a span {
+  position: absolute;
   display: block;
+  transition: clip-path 0.5s, color 0.5s;
+  font-weight: 800;
+  top: 85%;
+  right: 0;
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
   font-size: 1.5rem;
+}
+#mainVisual nav ul li:hover a span {
+  clip-path: polygon(0% 0, 100% 0, 100% 100%, 0% 100%);
+  color: var(--color-primary);
 }
 
 #introduction {
@@ -123,20 +146,33 @@ li {
   position: relative;
   color: var(--text-color);
   font-size: 6rem;
-  margin-top: 10rem;
+  text-align: center;
+  margin-top: 20rem;
   margin-bottom: 3rem;
-  padding-left: 5rem;
 }
 .sectionTitle h2 span {
   bottom: -3rem;
-  left: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
   position: absolute;
+  text-align: center;
   opacity: 0.05;
   font-size: 16rem;
 }
 
+.wrap {
+  width: 80%;
+  height: 50vh;
+  margin: 2rem auto 0;
+}
+
+#contents {
+  width: 100%;
+}
 #contents ul {
   display: flex;
+  width: 100%;
+  justify-content: center;
 }
 #contents ul .btn {
   cursor: pointer;
@@ -145,9 +181,9 @@ li {
   width: 250px;
   height: 50px;
   position: relative;
-  transition: 0.5s;
 }
 #contents ul .btn a {
+  transform: translateY(8px);
   display: flex;
   width: 100%;
   height: 100%;
@@ -156,27 +192,32 @@ li {
   position: relative;
   align-items: center;
   font-size: 2rem;
-  transition: 0.5s;
+  transition: transform 0.5s, font-weight 0.5s;
 }
 #contents ul .btn a span {
+  font-weight: 400;
   display: block;
   opacity: 0.2;
   width: 100%;
+  height: 100%;
   position: absolute;
-  top: 0;
+  top: -0.4rem;
+  left: 0;
   font-size: 1.5rem;
-  transition: 0.5s;
 }
 #contents ul .btn:hover::after {
   transform-origin: left top;
   transform: scale(1, 1);
 }
 #contents ul .btn:hover a {
-  transform: translateY(-8px);
+  transform: translateY(0px);
 }
 #contents ul .btn.active a {
   font-weight: 700;
-  transform: translateY(-8px);
+  transform: translateY(-6px);
+}
+#contents ul .btn.active a span {
+  font-weight: 400;
 }
 #contents ul .btn.active::after {
   position: absolute;
@@ -201,14 +242,15 @@ li {
   transform-origin: right top;
 }
 #contents .contentWrap {
-  width: 100%;
-  justify-content: center;
-  align-items: center;
+  width: 80%;
+  height: 50vh;
   position: relative;
+  margin: 2rem auto 0;
 }
 #contents .contentWrap .content {
-  position: absolute;
   width: 100%;
+  height: 100%;
+  position: absolute;
   display: flex;
   gap: 32px;
   display: none;
@@ -217,9 +259,12 @@ li {
 }
 #contents .contentWrap .content img {
   width: 50%;
+  height: 100%;
 }
 #contents .contentWrap .content .text {
   width: 50%;
+  height: 100%;
+  font-size: 2rem;
 }
 #contents .contentWrap .content.active {
   animation: contentIn 1s ease forwards;
@@ -228,6 +273,7 @@ li {
 #contents .contentWrap .content.hidden {
   animation: contentOut 1s ease forwards;
 }
+
 @keyframes contentOut {
   0% {
     display: flex;
@@ -245,4 +291,160 @@ li {
   100% {
     opacity: 1;
   }
+}
+#members {
+  width: 100%;
+}
+#members .memberGrade {
+  width: 100%;
+  width: 80%;
+  margin: 0 auto;
+  display: block;
+}
+#members .memberGrade h3 {
+  font-size: 8rem;
+  font-weight: 500;
+}
+#members .memberGrade h3 span {
+  font-weight: 800;
+  font-size: 4rem;
+}
+#members .memberWrap {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-flow: wrap;
+  justify-content: space-between;
+  padding: 2rem 12rem 0;
+  margin: 0 0 4rem;
+}
+#members .memberWrap .member {
+  width: 320px;
+  height: 500px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1254901961);
+  border-radius: 1.2rem;
+  margin: 0 2rem 4rem;
+  position: relative;
+  margin: 0 auto 4rem;
+  transition: transform 0.5s;
+}
+#members .memberWrap .member:hover {
+  transform: scale(1.02);
+}
+#members .memberWrap .member picture {
+  display: block;
+  width: 100%;
+  height: 60%;
+  border-radius: 1.2rem 1.2rem 0 0;
+}
+#members .memberWrap .member picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#members .memberWrap .member .memberPara {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+#members .memberWrap .member .memberPara span {
+  font-size: 1.6rem;
+}
+#members .memberWrap .member .memberPara .memberName {
+  font-size: 2.4rem;
+}
+#members .memberWrap .member .memberPara .memberName span {
+  margin-left: 1rem;
+  font-size: 1.6rem;
+}
+#members .memberWrap .member .memberPara,
+#members .memberWrap .member .memberPara .memberCourse,
+#members .memberWrap .member .memberPara .memberHobby {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+#members .memberWrap .member .memberPara h5,
+#members .memberWrap .member .memberPara .memberCourse h5,
+#members .memberWrap .member .memberPara .memberHobby h5 {
+  font-size: 1.4rem;
+  font-weight: normal;
+  background: #eee;
+  border-radius: 0.5rem;
+  padding: 0 0.5rem;
+  margin-right: 0.5rem;
+}
+#members .memberWrap .member .memberPara p,
+#members .memberWrap .member .memberPara .memberCourse p,
+#members .memberWrap .member .memberPara .memberHobby p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#members .memberWrap .member .memberPara .memberCourse.it {
+  font-size: 1.8rem;
+}
+#members .memberWrap .member .memberPara .memberCourse .field {
+  height: 2.4rem;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0rem 1rem;
+  margin-left: 0.5rem;
+  font-size: 1.6rem;
+  border-radius: 50vh;
+  color: #fff;
+  overflow-wrap: normal;
+  word-break: keep-all;
+}
+#members .memberWrap .member .memberPara .memberCourse .field.engineer {
+  background: var(--color-engineer);
+}
+#members .memberWrap .member .memberPara .memberCourse .field.designer {
+  background: var(--color-designer);
+}
+#members .memberWrap .member .memberPara .memberCourse .field.director {
+  background: var(--color-director);
+}
+#members .memberWrap .member .memberPara .memberMessage {
+  font-size: 1.6rem;
+  padding: 0 2rem;
+}
+#members .memberWrap .member .position {
+  width: 10rem;
+  height: 10rem;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  transform: translate(-25%, -25%) rotate(-5deg);
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+#details .detailContent {
+  width: 100%;
+  width: 80%;
+  margin: 0 auto;
+  display: block;
+}
+#details .detailContent h3 {
+  font-size: 5rem;
+  font-weight: 800;
+}
+#details .detailContent h3 span {
+  font-weight: 500;
+  font-size: 2rem;
+  opacity: 0.5;
 }

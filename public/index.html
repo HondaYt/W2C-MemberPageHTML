@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&family=Noto+Sans+JP:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=Noto+Sans+JP:wght@100;200;300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
   <!-- ページのスタイルはheadの最後に記載 -->
   <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
@@ -35,25 +35,27 @@
   <div id="mainVisual">
     <h2>あなたの成長を加速させる。</h2>
     <nav>
-      <h1>W2C</h1>
+      <h1><img src="images/logo.svg" alt="W2C"></h1>
       <ul>
-        <li><a href="#Introduction">サークルについて<span>Introduction</span></a></li>
-        <li><a href="#contacts">活動内容<span>Contacts</span></a></li>
+        <li><a href="#introduction">サークルについて<span>Introduction</span></a></li>
+        <li><a href="#contents">活動内容<span>Contents</span></a></li>
         <li><a href="#members">メンバー紹介<span>Members</span></a></li>
-        <li><a href="#details">活動詳細<span>details</span></a></li>
+        <li><a href="#details">活動詳細<span>Details</span></a></li>
         <li><a href="#works">作品紹介<span>Works</span></a></li>
       </ul>
     </nav>
   </div>
   <div id="introduction">
     <div class="introductionText">
-      <h2><span>W</span>eb <span>C</span>reative <span>C</span>lub</h2>
+      <h2><span>W</span>eb <span>C</span>reative<span>C</span>lub</h2>
       <p><span>W2C</span>は、コースの壁を超えて、これからのIT業界を担う、ものづくりに情熱を持った仲間と、つながれるサークルです。</p>
     </div>
     <picture><img src="images/introduction.jpg" alt=""></picture>
   </div>
-  <div class="sectionTitle" id="contents">
-    <h2>活動内容<span>Contents</span></h2>
+  <div id="contents">
+    <div class="sectionTitle">
+      <h2>活動内容<span>Contents</span></h2>
+    </div>
     <ul>
       <li class="btn"><a>コーディングの勉強<span>study of coding</span></a></li>
       <li class="btn"><a>デザインの勉強<span>study of Design</span></a></li>
@@ -61,11 +63,11 @@
     </ul>
     <ul>
     </ul>
-    <div class="contentWrap">
+    <div class="wrap contentWrap">
       <div class="content">
         <img src="https://picsum.photos/300/200?random=1" alt="dummy">
         <div class="text">
-          <h1>1つ目のコンテンツ</h1>
+          <h3>1つ目のコンテンツ</h3>
           <p>
             ここにてきすとここにてきすとここにてきすとここにてきすとここにてきすとここにてきすとここにてきすとここにてきすとここにてきすとここにてきすとここにてきすとここにてきすとここにてきすとここにてきすとここにてきすとここにてきすと
           </p>
@@ -74,7 +76,7 @@
       <div class="content">
         <img src="https://picsum.photos/300/200?random=2" alt="dummy">
         <div class="text">
-          <h1>2つ目のコンテンツ</h1>
+          <h3>2つ目のコンテンツ</h3>
           <p>
             ここにてきすとここにてきすとここにてきすとここにてきすとここにてきすとここにてきすとここにてきすとここにてきすとここにてきすとここにてきすとここにてきすとここにてきすとここにてきすとここにてきすとここにてきすとここにてきすと
           </p>
@@ -83,16 +85,222 @@
       <div class="content">
         <img src="https://picsum.photos/300/200?random=3" alt="dummy">
         <div class="text">
-          <h1>3つ目のコンテンツ</h1>
+          <h3>3つ目のコンテンツ</h3>
           <p>
             ここにてきすとここにてきすとここにてきすとここにてきすとここにてきすとここにてきすとここにてきすとここにてきすとここにてきすとここにてきすとここにてきすとここにてきすとここにてきすとここにてきすとここにてきすとここにてきすと
           </p>
         </div>
       </div>
     </div>
-
-
   </div>
+  <div id="members">
+    <div class="sectionTitle">
+      <h2>メンバー紹介<span>Members</span></h2>
+    </div>
+
+    <div class="memberGrade">
+      <h3>2<span>年生</span></h3>
+    </div>
+    <div class="wrap memberWrap">
+
+      <div class="member">
+        <picture><img src="images/oogaki.png" alt="りくとくんの写真"></picture>
+        <div class="memberPara">
+          <h4 class="memberName">大垣 陸斗<span>おおがき りくと</span></h4>
+          <div class="memberCourse">
+            <h5>コース</h5>
+            <p>Webデザイン<span class="field engineer">エンジニア</span></p>
+          </div>
+          <div class="memberHobby">
+            <h5>趣味</h5>
+            <p>おいしいご飯を食べに行く</p>
+          </div>
+          <p class="memberMessage">みんなで楽しく頑張っていきましょう！</p>
+        </div>
+        <div class="position">部長</div>
+      </div>
+
+      <div class="member">
+        <picture><img src="images/hosoda.png" alt="りくとくんの写真"></picture>
+        <div class="memberPara">
+          <h4 class="memberName">細田 海斗<span>ほそだ かいと</span></h4>
+          <div class="memberCourse">
+            <h5>コース</h5>
+            <p>Webデザイン<span class="field designer">デザイナー</span></p>
+          </div>
+          <div class="memberHobby">
+            <h5>趣味</h5>
+            <p>歌を聴くこと・歌うこと</p>
+          </div>
+          <p class="memberMessage">みんなで切磋琢磨し合い助け合いながらがんばってまーす！</p>
+        </div>
+        <div class="position">副部長</div>
+      </div>
+
+      <div class="member">
+        <picture><img src="images/oogaki.png" alt="りくとくんの写真"></picture>
+        <div class="memberPara">
+          <h4 class="memberName">福村 晃弘<span>ふくむら あきひろ</span></h4>
+          <div class="memberCourse">
+            <h5>コース</h5>
+            <p>Webデザイン<span class="field director">ディレクター</span></p>
+          </div>
+          <div class="memberHobby">
+            <h5>趣味</h5>
+            <p>おいしいご飯を食べに行く</p>
+          </div>
+          <p class="memberMessage">みんなで楽しく頑張っていきましょう！</p>
+        </div>
+        <div class="position">副部長</div>
+      </div>
+
+      <div class="member">
+        <picture><img src="images/oogaki.png" alt="りくとくんの写真"></picture>
+        <div class="memberPara">
+          <h4 class="memberName">松岡 優輝<span>まつおか ゆうき</span></h4>
+          <div class="memberCourse it">
+            <h5>コース</h5>
+            <p>IT開発エキスパート<span class="field engineer">エンジニア</span>
+            </p>
+          </div>
+          <div class="memberHobby">
+            <h5>趣味</h5>
+            <p>ダーツ</p>
+          </div>
+          <p class="memberMessage">
+            一緒に作品作って成長しましょう^^*
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="memberGrade">
+      <h3>1<span>年生</span></h3>
+    </div>
+    <div class="wrap memberWrap">
+
+      <div class="member">
+        <picture><img src="images/honda.png" alt="りくとくんの写真"></picture>
+        <div class="memberPara">
+          <h4 class="memberName">本田 有人<span>ほんだ ゆうと</span></h4>
+          <div class="memberCourse">
+            <h5>コース</h5>
+            <p>Webデザイン<span class="field engineer">エンジニア</span></p>
+          </div>
+          <div class="memberHobby">
+            <h5>趣味</h5>
+            <p>ギターを弾くこと</p>
+          </div>
+          <p class="memberMessage">ムキムキエンジニアになりたい💪💪</p>
+        </div>
+        <!-- <div class="position">部長</div> -->
+      </div>
+
+
+
+      <div class="member">
+        <picture><img src="images/okada.png" alt="りくとくんの写真"></picture>
+        <div class="memberPara">
+          <h4 class="memberName">岡田 未希<span>おかだ みき</span></h4>
+          <div class="memberCourse">
+            <h5>コース</h5>
+            <p>Webデザイン<span class="field engineer">エンジニア</span></p>
+          </div>
+          <div class="memberHobby">
+            <h5>趣味</h5>
+            <p>可愛いものを愛でる。</p>
+          </div>
+          <p class="memberMessage">みんなで楽しく頑張っていきましょう！</p>
+        </div>
+        <!-- <div class="position">副部長</div> -->
+      </div>
+      <div class="member">
+        <picture><img src="images/oogaki.png" alt="りくとくんの写真"></picture>
+        <div class="memberPara">
+          <h4 class="memberName">林 煜昭<span>りん いくあき</span></h4>
+          <div class="memberCourse">
+            <h5>コース</h5>
+            <p>Webデザイン<span class="field engineer">エンジニア</span></p>
+          </div>
+          <div class="memberHobby">
+            <h5>趣味</h5>
+            <p>アイドル、バイク</p>
+          </div>
+          <p class="memberMessage">一緒にWebクリエイターを目指して頑張りましょう！！</p>
+        </div>
+        <!-- <div class="position">副部長</div> -->
+      </div>
+      <div class="member">
+        <picture><img src="images/sunahara.png" alt="りくとくんの写真"></picture>
+        <div class="memberPara">
+          <h4 class="memberName">砂原 彩花<span>ひらた こうだい</span></h4>
+          <div class="memberCourse">
+            <h5>コース</h5>
+            <p>Webデザイン<span class="field engineer">エンジニア</span></p>
+          </div>
+          <div class="memberHobby">
+            <h5>趣味</h5>
+            <p>洋楽を聴くこと</p>
+          </div>
+          <p class="memberMessage">コーディング難しいけど楽しいでーす！</p>
+        </div>
+        <!-- <div class="position">副部長</div> -->
+      </div>
+      <div class="member">
+        <picture><img src="images/koudai.png" alt="りくとくんの写真"></picture>
+        <div class="memberPara">
+          <h4 class="memberName">平田 晃大<span>ひらた こうだい</span></h4>
+          <div class="memberCourse">
+            <h5>コース</h5>
+            <p>Webデザイン<span class="field engineer">エンジニア</span></p>
+          </div>
+          <div class="memberHobby">
+            <h5>趣味</h5>
+            <p>歌を聴くこと・歌うこと</p>
+          </div>
+          <p class="memberMessage">一緒にご飯でも行きましょ</p>
+        </div>
+        <!-- <div class="position">副部長</div> -->
+      </div>
+      <div class="member">
+        <picture><img src="images/fin.png" alt="りくとくんの写真"></picture>
+        <div class="memberPara">
+          <h4 class="memberName">グエンドゥックフィン<span></span></h4>
+          <div class="memberCourse">
+            <h5>コース</h5>
+            <p>Webデザイン<span class="field engineer">エンジニア</span></p>
+          </div>
+          <div class="memberHobby">
+            <h5>趣味</h5>
+            <p>音楽、アニメ</p>
+          </div>
+          <p class="memberMessage">コーディング頑張りみゃす！！💪💪</p>
+        </div>
+        <!-- <div class="position">副部長</div> -->
+      </div>
+
+    </div>
+  </div>
+  <div id="details">
+    <div class="sectionTitle">
+      <h2>活動詳細<span>Details</span></h2>
+    </div>
+
+    <div class="detailContent">
+      <h3>現在の活動日<span>※学期はじめにアンケートがあります。</span></h3>
+    </div>
+    <div class="wrap DetailWrap">
+
+    </div>
+    <div class="detailContent">
+      <h3>サークル内ルール</h3>
+    </div>
+    <div class="wrap DetailWrap">
+
+    </div>
+  </div>
+
+
   <script src="js/common.js"></script>
 </body>
 
