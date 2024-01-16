@@ -18,3 +18,15 @@ btns.forEach((btn, i) => {
         contents[i].classList.add("active");
     });
 });
+
+const nav = document.querySelector(".navWrap");
+const navOffset = nav.offsetTop;
+window.addEventListener("scroll", () => {
+    if (scrollY >= navOffset) {
+        nav.style.position = "fixed";
+        nav.classList.add("fixed-nav");
+    } else {
+        nav.style.position = "";
+        nav.classList.remove("fixed-nav");
+    }
+});

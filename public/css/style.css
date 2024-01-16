@@ -1,5 +1,6 @@
+@charset "UTF-8";
 :root {
-  --color-primary: hsl(0, 65%, 50%);
+  --color-primary: #d61717;
   --text-color: #333333;
   --text-color-rgb: 51, 51, 51;
   --color-engineer: #17a8d6;
@@ -44,46 +45,66 @@ li {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 3rem;
+  font-size: 4rem;
   color: #fff;
   text-align: center;
 }
-#mainVisual nav {
+#mainVisual .navWrap {
   width: 100%;
   height: 10%;
+  padding: 10px;
+  z-index: 100;
+  transition: all 0.5s;
+}
+#mainVisual .navWrap.fixed-nav {
+  background-color: rgba(0, 0, 0, 0.9);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+#mainVisual .navWrap nav {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 5rem;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, #fff 100%);
+  background-color: rgba(255, 255, 255, 0.2); /* 背景色 */
+  border: 1px solid rgba(255, 255, 255, 0.4); /* ボーダー */
+  border-right-color: rgba(255, 255, 255, 0.4);
+  border-bottom-color: rgba(255, 255, 255, 0.4);
+  border-radius: 15px;
+  -webkit-backdrop-filter: blur(20px); /* ぼかしエフェクト */
+  backdrop-filter: blur(20px);
+  box-shadow: 0 5px 20px rgba(51, 51, 51, 0.5019607843); /* 薄い影 */
 }
-#mainVisual nav h1 {
+#mainVisual .navWrap nav h1 {
   height: 100%;
   display: flex;
   padding: 2rem 0;
   align-items: center;
   justify-content: center;
 }
-#mainVisual nav h1 img {
+#mainVisual .navWrap nav h1 img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-#mainVisual nav ul {
+#mainVisual .navWrap nav ul {
   display: flex;
 }
-#mainVisual nav ul li {
+#mainVisual .navWrap nav ul li {
   margin-left: 4rem;
 }
-#mainVisual nav ul li a {
+#mainVisual .navWrap nav ul li a {
   position: relative;
   display: flex;
   align-items: flex-end;
   flex-flow: column;
   font-size: 2rem;
   font-weight: 600;
+  color: #fff;
 }
-#mainVisual nav ul li a span {
+#mainVisual .navWrap nav ul li a span {
   position: absolute;
   display: block;
   transition: clip-path 0.5s, color 0.5s;
@@ -93,9 +114,9 @@ li {
   clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
   font-size: 1.5rem;
 }
-#mainVisual nav ul li:hover a span {
+#mainVisual .navWrap nav ul li:hover a span {
   clip-path: polygon(0% 0, 100% 0, 100% 100%, 0% 100%);
-  color: var(--color-primary);
+  color: #ff3434;
 }
 
 #introduction {
@@ -119,7 +140,7 @@ li {
 #introduction .introductionText h2 span {
   font-weight: 600;
   font-size: 9.6rem;
-  color: #d61717;
+  color: var(--color-primary);
 }
 #introduction .introductionText h2 span:first-child {
   letter-spacing: -1rem;
