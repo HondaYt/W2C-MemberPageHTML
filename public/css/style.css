@@ -54,11 +54,14 @@ li {
   height: 10%;
   padding: 10px;
   z-index: 100;
-  transition: all 0.5s;
+  top: 0;
+  left: 0;
+  background: none;
+  transition: background 0.5s;
 }
 #mainVisual .navWrap.fixed-nav {
-  background-color: rgba(0, 0, 0, 0.9);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5647058824) 0%, rgba(0, 0, 0, 0) 100%);
+  position: fixed;
 }
 #mainVisual .navWrap nav {
   width: 100%;
@@ -140,10 +143,13 @@ li {
 #introduction .introductionText h2 span {
   font-weight: 600;
   font-size: 9.6rem;
-  color: var(--color-primary);
+  background: linear-gradient(133deg, #d61717 0%, #ff6b00 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
 }
 #introduction .introductionText h2 span:first-child {
-  letter-spacing: -1rem;
+  margin-right: -1rem;
 }
 #introduction .introductionText p {
   width: 80%;
@@ -212,7 +218,7 @@ li {
   align-items: center;
   position: relative;
   align-items: center;
-  font-size: 2rem;
+  font-size: 2.5rem;
   transition: transform 0.5s, font-weight 0.5s;
 }
 #contents ul .btn a span {
